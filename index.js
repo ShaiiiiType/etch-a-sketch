@@ -2,11 +2,14 @@
 
 
 let debounce = false;
+let current_changing = false;
 let size = 16;
 let color_pint = document.getElementById('favcolor').value;
 
 function changeColor(event){
-    event.target.style.backgroundColor = color_pint;
+    if (current_changing == false){
+        event.target.style.backgroundColor = color_pint;
+    }
 }
 
 console.log("Hello, World!");
@@ -60,7 +63,12 @@ document.getElementById("clear").onclick = function(){
     }
 }
 
+document.getElementById('favcolor').onclick = function(){
+    current_changing = true;
+}
+
 document.getElementById('favcolor').onchange = function(){
+    current_changing = false;
     console.log(document.getElementById('favcolor').value)
     color_pint = document.getElementById('favcolor').value
 }

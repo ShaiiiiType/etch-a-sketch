@@ -12,8 +12,14 @@ button{
     border-style: none;
     padding: 5px 12px; 
     border-radius: 3px;
+    border-bottom: 4px solid #4c8b37;
+    transition: 0.1s;
 }
 
+button:hover{
+    border-bottom: none;
+    transform: translateY(3px);
+}
 #container {
     height: 540px;
     width: 540px;
