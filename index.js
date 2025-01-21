@@ -1,5 +1,7 @@
 // Your JavaScript goes here!
 
+
+let debounce = false;
 let size = 16;
 let color_pint = document.getElementById('favcolor').value;
 
@@ -10,7 +12,7 @@ function changeColor(event){
 console.log("Hello, World!");
 
 function createBox(){
-    let hw = 600 / size;
+    let hw = 540 / size;
     hw = String(hw)
     for (let step = 0; step < size*size; step++){
         var element = document.createElement("div")
@@ -30,14 +32,23 @@ createBox();
 
 
 document.getElementById("change-size").onclick = function(){
-    size = window.prompt("New size?");
-    var contain = document.getElementById('container');
+    if (debounce == false){
+        debounce = true
+        size = window.prompt("New size? (enter numbers 1-100 only)");
 
-    while(contain.firstChild){
-        contain.removeChild(contain.firstChild);
+
+        while ((Number(size) < 1) || Number(size) > 100){
+            size = window.prompt("invalid, choose only from 1-100");
+        }
+        var contain = document.getElementById('container');
+    
+        while(contain.firstChild){
+            contain.removeChild(contain.firstChild);
+        }
+    
+        createBox();
+        debounce = false;
     }
-
-    createBox();
 }
 
 

@@ -1,9 +1,32 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 200;
+    justify-content: center;
+    align-content: center;
+    display: flex;
+}
+
+button{
+    background-color: rgb(95, 203, 89);
+    color: #ffffff;
+    border-style: none;
+    padding: 5px 12px; 
+    border-radius: 3px;
+}
+
 #container {
-    height: 600px;
-    width: 600px;
-    background-color: rgb(255, 255, 255);
+    height: 540px;
+    width: 540px;
+    background-color: #ffffff;
     display: flex;
     align-content: flex-start;
     justify-content: flex-start;
     flex-wrap: wrap;
+}
+
+#favcolor{
+    border-style: none;
+    height: 30px;
+    width: 30px;
+    margin: 0px;
 }
