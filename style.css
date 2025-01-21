@@ -26,7 +26,11 @@ button{
 
 #favcolor{
     border-style: none;
-    height: 30px;
-    width: 30px;
-    margin: 0px;
+    height: 25px;
+    width: 25px;
+    padding: 0px;
+}
+
+.yey {
+    padding: 5px 0;
 }
